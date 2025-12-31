@@ -1,0 +1,1314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cheyenne Family Dental Center | Modern Dental Care</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0d8abc;
+            --primary-dark: #0a6fa1;
+            --secondary: #2bb673;
+            --light: #f8f9fa;
+            --dark: #333;
+            --gray: #6c757d;
+            --light-gray: #e9ecef;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: #fff;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: white;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-icon {
+            color: var(--primary);
+            font-size: 2rem;
+            margin-right: 10px;
+        }
+
+        .logo-text {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark);
+        }
+
+        .logo-text span {
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: var(--transition);
+            padding: 5px 0;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--dark);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(13, 138, 188, 0.9), rgba(13, 138, 188, 0.8)), url('https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .btn-primary {
+            background-color: var(--secondary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #239b5e;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-outline:hover {
+            background-color: white;
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        /* Services Section */
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--dark);
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background-color: var(--secondary);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-icon {
+            background-color: var(--light-gray);
+            padding: 30px;
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--primary);
+        }
+
+        .service-content {
+            padding: 25px;
+        }
+
+        .service-content h3 {
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+
+        /* Appointment Booking Section */
+        .booking-section {
+            background-color: var(--light);
+        }
+
+        .booking-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .booking-options {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .booking-option {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .booking-option:hover {
+            transform: translateY(-5px);
+        }
+
+        .option-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .booking-option h3 {
+            color: var(--dark);
+        }
+
+        /* About Section */
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-image {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Insurance Section */
+        .insurance-logos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .insurance-logo {
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            font-weight: 600;
+            color: var(--gray);
+            min-width: 150px;
+            text-align: center;
+        }
+
+        /* Contact & Location */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .contact-icon {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-top: 5px;
+        }
+
+        .map-placeholder {
+            background-color: var(--light-gray);
+            height: 300px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: var(--gray);
+        }
+
+        .map-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-logo {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo span {
+            color: var(--primary);
+        }
+
+        .footer-links h4, .footer-hours h4 {
+            color: white;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-links h4::after, .footer-hours h4::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 2px;
+            background-color: var(--primary);
+            bottom: 0;
+            left: 0;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #bbb;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+            padding-left: 5px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 30px;
+            border-top: 1px solid #333;
+            color: #bbb;
+            font-size: 0.9rem;
+        }
+
+        /* Modal for Booking */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: white;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 500px;
+            padding: 30px;
+            position: relative;
+            animation: modalFade 0.3s;
+        }
+
+        @keyframes modalFade {
+            from {opacity: 0; transform: translateY(-50px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--gray);
+        }
+
+        .modal-title {
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1rem;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        /* Chat Widget */
+        .chat-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .chat-toggle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            box-shadow: 0 4px 15px rgba(13, 138, 188, 0.3);
+            cursor: pointer;
+            font-size: 1.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        .chat-toggle:hover {
+            background-color: var(--primary-dark);
+            transform: scale(1.1);
+        }
+
+        .chat-container {
+            position: absolute;
+            bottom: 70px;
+            right: 0;
+            width: 350px;
+            height: 500px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .chat-header {
+            background-color: var(--primary);
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chat-header h3 {
+            margin: 0;
+            color: white;
+        }
+
+        .close-chat {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        .chat-messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            background-color: #f9f9f9;
+        }
+
+        .message {
+            margin-bottom: 15px;
+            display: flex;
+        }
+
+        .message.bot {
+            justify-content: flex-start;
+        }
+
+        .message.user {
+            justify-content: flex-end;
+        }
+
+        .message-content {
+            max-width: 80%;
+            padding: 10px 15px;
+            border-radius: 18px;
+            line-height: 1.4;
+        }
+
+        .bot .message-content {
+            background-color: white;
+            border: 1px solid #e0e0e0;
+            color: var(--dark);
+        }
+
+        .user .message-content {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .chat-input {
+            padding: 15px;
+            border-top: 1px solid #eee;
+            display: flex;
+        }
+
+        .chat-input input {
+            flex: 1;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 50px;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .chat-input button {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            margin-left: 10px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .chat-input button:hover {
+            background-color: var(--primary-dark);
+        }
+
+        /* AI Agent Indicator */
+        .ai-agent {
+            display: inline-flex;
+            align-items: center;
+            background-color: rgba(43, 182, 115, 0.1);
+            color: var(--secondary);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        .ai-agent i {
+            margin-right: 5px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .booking-container, .about-container, .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                margin: 10px 0;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .chat-container {
+                width: 300px;
+                height: 450px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-tooth logo-icon"></i>
+                <div class="logo-text">Cheyenne <span>Family Dental</span></div>
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#insurance">Insurance</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#" class="btn btn-primary" id="bookNowBtn">Book Appointment</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Gentle Dental Care for Your Entire Family</h1>
+            <p>Welcome to Cheyenne Family Dental Center, where we provide friendly, experienced dental care in a comfortable environment. Locally owned by Dr. Jesse Massie, DDS.</p>
+            <div class="cta-buttons">
+                <a href="#" class="btn btn-primary" id="bookNowHeroBtn">Book Appointment Now</a>
+                <a href="#contact" class="btn btn-outline">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section-padding" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Dental Services</h2>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tooth"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Dental Exams & Cleanings</h3>
+                        <p>Comprehensive dental exams, X-rays, and professional cleanings to maintain optimal oral health.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Crowns & Bridges</h3>
+                        <p>Restore damaged teeth or replace missing teeth with custom-made crowns and bridges.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-smile"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Cosmetic Dentistry</h3>
+                        <p>Transform your smile with teeth whitening, veneers, and other cosmetic treatments.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-teeth"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Dentures</h3>
+                        <p>Custom-fitted full or partial dentures to restore your smile and chewing function.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-bed"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Sleep & Snoring Appliances</h3>
+                        <p>Custom mouth guards and appliances to help with sleep apnea and snoring issues.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Custom Mouth Guards</h3>
+                        <p>Protect your teeth during sports or from nighttime grinding with custom-fitted mouth guards.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Appointment Booking Section -->
+    <section class="section-padding booking-section" id="booking">
+        <div class="container">
+            <div class="section-title">
+                <h2>Easy Appointment Booking</h2>
+            </div>
+            
+            <div class="booking-container">
+                <div class="booking-options">
+                    <div class="booking-option">
+                        <div class="option-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <h3>Call Agent Booking</h3>
+                        <p>Speak directly with our friendly scheduling team to book your appointment at a time that works for you.</p>
+                        <div class="ai-agent">
+                            <i class="fas fa-robot"></i> AI-Assisted Scheduling
+                        </div>
+                        <a href="tel:3075551234" class="btn btn-primary" style="margin-top: 15px;">Call Now: (307) 555-1234</a>
+                    </div>
+                    
+                    <div class="booking-option">
+                        <div class="option-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h3>AI Chat Assistant</h3>
+                        <p>Use our intelligent chat assistant to check availability, book appointments, and get answers to common questions 24/7.</p>
+                        <div class="ai-agent">
+                            <i class="fas fa-brain"></i> AI-Powered
+                        </div>
+                        <button class="btn btn-primary" style="margin-top: 15px;" id="openChatBtn">Open Chat Assistant</button>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3>Why Choose Our Smart Booking?</h3>
+                    <p>We've integrated AI technology to make scheduling your dental appointments easier than ever:</p>
+                    <ul style="margin-top: 15px; padding-left: 20px;">
+                        <li style="margin-bottom: 10px;"><strong>24/7 Availability:</strong> Book anytime with our AI chat assistant</li>
+                        <li style="margin-bottom: 10px;"><strong>Reduced Wait Times:</strong> AI helps optimize scheduling for faster service</li>
+                        <li style="margin-bottom: 10px;"><strong>Personalized Reminders:</strong> Get automated reminders via text or email</li>
+                        <li style="margin-bottom: 10px;"><strong>Data-Driven Insights:</strong> We analyze booking patterns to improve service</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section-padding" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Our Practice</h2>
+            </div>
+            
+            <div class="about-container">
+                <div>
+                    <h3>Meet Dr. Jesse Massie, DDS</h3>
+                    <p>Dr. Jesse Massie grew up right here in Cheyenne, Wyoming, and is proud to serve his community as a trusted family dentist. With over 15 years of experience, Dr. Massie is dedicated to providing gentle, high-quality dental care for patients of all ages.</p>
+                    <p>At Cheyenne Family Dental Center, we believe in treating our patients like family. Our friendly staff, comfortable office, and commitment to outstanding service make us the preferred dental practice in Cheyenne.</p>
+                    <p>We're always accepting new patients and appreciate your referrals!</p>
+                    <a href="#contact" class="btn btn-primary" style="margin-top: 20px;">Visit Our Office</a>
+                </div>
+                
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Dr. Jesse Massie and team">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Insurance Section -->
+    <section class="section-padding booking-section" id="insurance">
+        <div class="container">
+            <div class="section-title">
+                <h2>Insurance & Financing</h2>
+            </div>
+            
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 30px;">We work with most major insurance providers and offer flexible financing options to make dental care affordable for everyone.</p>
+            
+            <div class="insurance-logos">
+                <div class="insurance-logo">Aetna</div>
+                <div class="insurance-logo">Blue Cross Blue Shield</div>
+                <div class="insurance-logo">Cigna</div>
+                <div class="insurance-logo">Delta Dental</div>
+                <div class="insurance-logo">MetLife</div>
+                <div class="insurance-logo">United Healthcare</div>
+                <div class="insurance-logo">Humana</div>
+                <div class="insurance-logo">Guardian</div>
+            </div>
+            
+            <p style="text-align: center; margin-top: 30px; font-style: italic;">Note: Insurance companies have several plan types. Please contact your insurance company to confirm that your plan is "in network" with us.</p>
+            
+            <div style="text-align: center; margin-top: 40px;">
+                <h3>Financing Options Available</h3>
+                <p>We accept all major credit cards and offer financing through CareCredit and Cherry financing.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Location -->
+    <section class="section-padding" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact & Location</h2>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Our Location</h4>
+                            <p>Cheyenne Family Dental Center<br>
+                            1234 Yellowstone Rd.<br>
+                            Cheyenne, WY 82001</p>
+                            <p><em>Next door to the Human Bean coffee shop and directly across from the Airport Golf Course. Look for the giant tooth sign out front!</em></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Phone Number</h4>
+                            <p><a href="tel:3075551234">(307) 555-1234</a></p>
+                            <p>Call us today to schedule an appointment. We are always accepting new patients!</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <h4>Office Hours</h4>
+                            <p>Monday - Thursday: 8:00 AM - 5:00 PM<br>
+                            Friday: 8:00 AM - 3:00 PM<br>
+                            Saturday - Sunday: Closed</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="map-placeholder">
+                        <i class="fas fa-map-marked-alt map-icon"></i>
+                        <h4>Interactive Map</h4>
+                        <p>In the full version, this would display an interactive Google Map</p>
+                        <p><small>Demo: Location on Yellowstone Rd.</small></p>
+                    </div>
+                    
+                    <div style="background-color: var(--light-gray); padding: 20px; border-radius: 10px; margin-top: 20px;">
+                        <h4>Data Analytics Dashboard</h4>
+                        <p><strong>Demo Feature:</strong> As part of our AI integration, we provide a dashboard with insights about:</p>
+                        <ul style="margin-top: 10px; padding-left: 20px;">
+                            <li>Appointment booking trends</li>
+                            <li>Peak scheduling times</li>
+                            <li>Patient feedback analysis</li>
+                            <li>Service popularity metrics</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div>
+                    <div class="footer-logo">Cheyenne <span>Family Dental</span></div>
+                    <p>Providing gentle dental care for your entire family in Cheyenne, WY since 2010. Locally owned and operated by Dr. Jesse Massie, DDS.</p>
+                    <p style="margin-top: 15px;"><i class="fas fa-heart" style="color: #ff6b6b;"></i> Proudly serving the Cheyenne community</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#insurance">Insurance</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-hours">
+                    <h4>Office Hours</h4>
+                    <p>Monday - Thursday: 8:00 AM - 5:00 PM</p>
+                    <p>Friday: 8:00 AM - 3:00 PM</p>
+                    <p>Saturday - Sunday: Closed</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Cheyenne Family Dental Center. All rights reserved. | Website Demo by Mohit Rahangdale - Web Developer & AI Engineer</p>
+                <p style="margin-top: 10px;">This is a demo frontend showcasing modern features like AI chat booking and data analytics integration.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Booking Modal -->
+    <div class="modal" id="bookingModal">
+        <div class="modal-content">
+            <button class="close-modal" id="closeModalBtn">&times;</button>
+            <h2 class="modal-title">Book Your Appointment</h2>
+            <p>Choose your preferred booking method:</p>
+            
+            <div style="display: flex; gap: 15px; margin: 25px 0;">
+                <button class="btn btn-primary" style="flex: 1;" id="callBookingBtn">
+                    <i class="fas fa-phone-alt"></i> Call Agent
+                </button>
+                <button class="btn btn-primary" style="flex: 1;" id="chatBookingBtn">
+                    <i class="fas fa-robot"></i> AI Chat
+                </button>
+            </div>
+            
+            <p>Or fill out the form below and we'll contact you:</p>
+            
+            <form id="bookingForm">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" class="form-control" placeholder="Your name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" class="form-control" placeholder="(307) 555-1234" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" class="form-control" placeholder="you@example.com">
+                </div>
+                
+                <div class="form-group">
+                    <label for="service">Service Interested In</label>
+                    <select id="service" class="form-control">
+                        <option value="">Select a service</option>
+                        <option value="cleaning">Dental Cleaning</option>
+                        <option value="exam">Exam & X-rays</option>
+                        <option value="cosmetic">Cosmetic Dentistry</option>
+                        <option value="crown">Crowns & Bridges</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Booking Request</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Chat Widget -->
+    <div class="chat-widget">
+        <button class="chat-toggle" id="chatToggleBtn">
+            <i class="fas fa-comment-dots"></i>
+        </button>
+        
+        <div class="chat-container" id="chatContainer">
+            <div class="chat-header">
+                <h3>Dental Assistant AI</h3>
+                <button class="close-chat" id="closeChatBtn">&times;</button>
+            </div>
+            
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot">
+                    <div class="message-content">
+                        Hello! I'm your AI dental assistant. How can I help you today? I can help with:
+                        <ul style="margin-top: 10px; padding-left: 20px;">
+                            <li>Booking appointments</li>
+                            <li>Answering questions about services</li>
+                            <li>Insurance information</li>
+                            <li>Office hours and location</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chat-input">
+                <input type="text" id="chatInput" placeholder="Type your message here...">
+                <button id="sendChatBtn"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            document.getElementById('navLinks').classList.toggle('active');
+            this.querySelector('i').classList.toggle('fa-bars');
+            this.querySelector('i').classList.toggle('fa-times');
+        });
+
+        // Booking Modal
+        const bookingModal = document.getElementById('bookingModal');
+        const bookNowBtns = document.querySelectorAll('#bookNowBtn, #bookNowHeroBtn');
+        const closeModalBtn = document.getElementById('closeModalBtn');
+        const callBookingBtn = document.getElementById('callBookingBtn');
+        const chatBookingBtn = document.getElementById('chatBookingBtn');
+        const bookingForm = document.getElementById('bookingForm');
+
+        // Open modal when any book now button is clicked
+        bookNowBtns.forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                bookingModal.style.display = 'flex';
+            });
+        });
+
+        // Close modal
+        closeModalBtn.addEventListener('click', function() {
+            bookingModal.style.display = 'none';
+        });
+
+        // Close modal when clicking outside
+        window.addEventListener('click', function(e) {
+            if (e.target === bookingModal) {
+                bookingModal.style.display = 'none';
+            }
+        });
+
+        // Call booking button
+        callBookingBtn.addEventListener('click', function() {
+            alert("In the full implementation, this would initiate a call to our scheduling agent or show a call dialog. For demo: Calling (307) 555-1234");
+            // In real implementation: window.location.href = 'tel:3075551234';
+        });
+
+        // Chat booking button
+        chatBookingBtn.addEventListener('click', function() {
+            bookingModal.style.display = 'none';
+            document.getElementById('chatContainer').style.display = 'flex';
+            document.getElementById('chatInput').focus();
+        });
+
+        // Form submission
+        bookingForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert("Thank you! Your appointment request has been submitted. Our team will contact you within 24 hours to confirm.");
+            bookingModal.style.display = 'none';
+            bookingForm.reset();
+        });
+
+        // Chat Widget Functionality
+        const chatToggleBtn = document.getElementById('chatToggleBtn');
+        const closeChatBtn = document.getElementById('closeChatBtn');
+        const chatContainer = document.getElementById('chatContainer');
+        const chatMessages = document.getElementById('chatMessages');
+        const chatInput = document.getElementById('chatInput');
+        const sendChatBtn = document.getElementById('sendChatBtn');
+        const openChatBtn = document.getElementById('openChatBtn');
+
+        // Toggle chat widget
+        chatToggleBtn.addEventListener('click', function() {
+            chatContainer.style.display = chatContainer.style.display === 'flex' ? 'none' : 'flex';
+            if (chatContainer.style.display === 'flex') {
+                chatInput.focus();
+            }
+        });
+
+        // Open chat from button
+        openChatBtn.addEventListener('click', function() {
+            chatContainer.style.display = 'flex';
+            chatInput.focus();
+        });
+
+        // Close chat
+        closeChatBtn.addEventListener('click', function() {
+            chatContainer.style.display = 'none';
+        });
+
+        // Send chat message
+        function sendMessage() {
+            const message = chatInput.value.trim();
+            if (message === '') return;
+
+            // Add user message
+            const userMessageDiv = document.createElement('div');
+            userMessageDiv.className = 'message user';
+            userMessageDiv.innerHTML = `<div class="message-content">${message}</div>`;
+            chatMessages.appendChild(userMessageDiv);
+
+            // Clear input
+            chatInput.value = '';
+
+            // Scroll to bottom
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+
+            // Simulate AI response after delay
+            setTimeout(() => {
+                generateAIResponse(message.toLowerCase());
+            }, 1000);
+        }
+
+        // Send message on button click
+        sendChatBtn.addEventListener('click', sendMessage);
+
+        // Send message on Enter key
+        chatInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+
+        // Generate AI responses
+        function generateAIResponse(userMessage) {
+            let response = "";
+            
+            if (userMessage.includes('appointment') || userMessage.includes('book') || userMessage.includes('schedule')) {
+                response = "I can help you book an appointment! We have availability this week on Tuesday and Thursday afternoon, or next Monday morning. Would you like me to schedule one for you?";
+            } else if (userMessage.includes('hour') || userMessage.includes('open') || userMessage.includes('close')) {
+                response = "Our office hours are:<br>Monday - Thursday: 8:00 AM - 5:00 PM<br>Friday: 8:00 AM - 3:00 PM<br>Saturday - Sunday: Closed";
+            } else if (userMessage.includes('insurance') || userMessage.includes('cover')) {
+                response = "We accept most major insurance plans including Aetna, Blue Cross Blue Shield, Cigna, Delta Dental, MetLife, and United Healthcare. We also offer financing options through CareCredit and Cherry.";
+            } else if (userMessage.includes('service') || userMessage.includes('clean') || userMessage.includes('exam')) {
+                response = "We offer a full range of dental services including exams & cleanings, crowns & bridges, cosmetic dentistry, dentures, custom mouth guards, and sleep appliances.";
+            } else if (userMessage.includes('location') || userMessage.includes('address') || userMessage.includes('where')) {
+                response = "We're located at 1234 Yellowstone Rd. in Cheyenne, WY. We're next door to the Human Bean coffee shop and across from the Airport Golf Course. Look for the giant tooth sign!";
+            } else if (userMessage.includes('emergency') || userMessage.includes('pain') || userMessage.includes('hurt')) {
+                response = "For dental emergencies during office hours, please call us immediately at (307) 555-1234. If it's after hours, leave a message and we'll return your call as soon as possible.";
+            } else if (userMessage.includes('cost') || userMessage.includes('price') || userMessage.includes('pay')) {
+                response = "Costs vary depending on the treatment and your insurance coverage. We provide transparent pricing and will give you a detailed estimate before any treatment. We also offer payment plans.";
+            } else if (userMessage.includes('hello') || userMessage.includes('hi') || userMessage.includes('hey')) {
+                response = "Hello! How can I assist you today? I can help with appointments, services, insurance, or any other questions you have about Cheyenne Family Dental Center.";
+            } else {
+                response = "I understand you're asking about: \"" + userMessage + "\". For specific questions about appointments, services, or insurance, I can help. Would you like me to connect you with a live agent for more detailed assistance?";
+            }
+
+            // Add AI response
+            const botMessageDiv = document.createElement('div');
+            botMessageDiv.className = 'message bot';
+            botMessageDiv.innerHTML = `<div class="message-content">${response}</div>`;
+            chatMessages.appendChild(botMessageDiv);
+
+            // Scroll to bottom
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                
+                // Skip if it's just "#" or booking modal links
+                if (href === "#" || this.classList.contains('btn-primary')) {
+                    return;
+                }
+                
+                e.preventDefault();
+                
+                const targetId = href.substring(1);
+                const targetElement = document.getElementById(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    document.getElementById('navLinks').classList.remove('active');
+                    document.getElementById('mobileMenuBtn').querySelector('i').classList.remove('fa-times');
+                    document.getElementById('mobileMenuBtn').querySelector('i').classList.add('fa-bars');
+                }
+            });
+        });
+
+        // Demo auto-message after 10 seconds
+        setTimeout(() => {
+            if (!localStorage.getItem('demoShown')) {
+                const demoMessage = document.createElement('div');
+                demoMessage.className = 'message bot';
+                demoMessage.innerHTML = `<div class="message-content"><strong>Demo Feature:</strong> This AI chat assistant can handle appointment booking, answer FAQs, and collect patient information 24/7. In the full implementation, it would integrate with your calendar and CRM system.</div>`;
+                chatMessages.appendChild(demoMessage);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+                localStorage.setItem('demoShown', 'true');
+            }
+        }, 10000);
+    </script>
+</body>
+</html>
